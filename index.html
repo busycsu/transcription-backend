@@ -9,37 +9,65 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <div class="container">
-        <h1>
-            Real-time Audio Medical Transcription by LOG
-        </h1>
-        <!-- <p class="small-caps">
-            Using the <a href="https://aws.amazon.com/transcribe/">Amazon Transcribe</a> WebSocket API
-        </p>
-        <hr/> -->
-        <p>
-            <!-- Create an <a href="https://aws.amazon.com/free/">AWS Account</a>, attach the necessary -->
-                The current<a
-                href="policy.json"> policy</a>
-                <!-- , and enter your Access Id and Secret Key below. -->
-        </p>
+<body>        
+    <img id="logo" src="logo.png" alt="WELL Logo" />
+    <div class="container" style="height:400px;">
+        <div className="transcribe_body">
+            <div className="transcribe_title" id = "transcribe_title"> Real-time Medical Transcription</div>
+        </div> 
 
-        <div id="error" class="isa_error"></div>
+        <div class="row" style="height: 400px;">
+            <div class="col-sm">
+                <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="4" cols="33"
+                    readonly="readonly"></textarea>
+            </div>
+            
+            <div class="col-sm">
+                
+                   <img src="./microphone.png" style="height: 200px;margin-left: 17em; padding-top: 7em;cursor:pointer" id="start-button" class="button-xl" title="Start Transcription"></img>
+            </div>   
+            <div class="row" style="writing-mode: vertical-lr;height: 6em;">
+                
+                <div class="button">
+                    <button id="stop-button" class="button-xl button-secondary" title="Stop Transcription" disabled="true"><i
+                                    class="fa fa-stop-circle"></i> Stop
+                    </button>
 
+                </div>
+                
+                
+                <button id="reset-button" class="button-xl button-secondary" title="Clear Transcript"> 
+                    Clear Transcript
+                </button>
+
+                <button id="comprehend-button" class="button-xl button-secondary" title="Comprehend"> 
+                    Comprehend
+                </button>
+                <button id="explain-button" class="button-xl button-secondary" title="explain"> 
+                    Explain
+                </button>
+            </div>
+                
+            </div>
+            
+            <div id="comprehend-transcript"></div>
+            <!-- <div id="explain-transcript"></div> -->
+              
+
+        </div>
         <div class="row">
-            <div class="col">
-                <!-- <label>Access ID:</label>
+            <!-- <div class="col">
+                <label>Access ID:</label>
                 <input type="password" id="access_id" placeholder="ACCESS ID" value="" />
 
                 <label>Secret Key:</label>
                 <input type="password" id="secret_key" placeholder="SECRET KEY" value="" />
                 <label>Session Token (if using MFA):</label>
-                <input type="password" id="session_token" placeholder="SESSION TOKEN" value="" /> -->
-            </div>
+                <input type="password" id="session_token" placeholder="SESSION TOKEN" value="" />
+            </div> -->
             <div class="col">
-                <label>Language: </label>
-                <select id="language">
+                <label id="language" style="padding-left:2em;color:#90a8ca;">Language: </label>
+                <select >
                     <optgroup label="English">
                         <option value="en-US">US English (en-US)</option>
                         <option value="en-AU">Australian English (en-AU)</option>
@@ -54,7 +82,7 @@
                     </optgroup>
                 </select>
 
-                <label>Region:</label>
+                <label style="padding-left:2.5em;color:#90a8ca;">Region:</label>
                 <select id="region">
                     <option value="us-east-1">US East (N. Virginia)</option>
                     <option value="us-east-2">US East (Ohio)</option>
@@ -65,39 +93,9 @@
                 </select>
             </div>
         </div>
-        <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="5"
-            readonly="readonly"></textarea>
-        <div class="row">
-            <div class="col">
-                <button id="start-button" class="button-xl" title="Start Transcription">
-                    <i class="fa fa-microphone"></i> Start
-                </button>
-                <button id="stop-button" class="button-xl" title="Stop Transcription" disabled="true"><i
-                        class="fa fa-stop-circle"></i> Stop
-                </button>
-                <button id="reset-button" class="button-xl button-secondary" title="Clear Transcript"> 
-                    Clear Transcript
-                </button>
-
-                <button id="comprehend-button" class="button-xl button-secondary" title="Comprehend"> 
-                    Comprehend
-                </button>
-                <button id="explain-button" class="button-xl button-secondary" title="explain"> 
-                    Explain
-                </button>
-            </div>
-            <div class="col">
-                <a class="float-right" href="https://aws.amazon.com/free/" aria-label="Amazon Web Services">
-                    <img id="logo" src="logo.png" alt="WELL Logo" />
-                </a>
-            </div>
-            <div id="comprehend-transcript"></div>
-            <!-- <div id="explain-transcript"></div> -->
-              
-
-        </div>
     </div>
-
+    <div id="error" class="isa_error"></div>
+    
     <!-- <a href="https://github.com/aws-samples/amazon-transcribe-websocket-static" aria-label="View source on GitHub">
         <svg id="github" width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
             <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -112,6 +110,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="dist/main.js"></script>
+   
 </body>
+ 
 
 </html>
