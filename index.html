@@ -18,9 +18,11 @@
 
         <div class="row" style="height: 400px;">
             <div class="col-sm">
-                <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="4" cols="33"
-                    readonly="readonly"></textarea>
+                <div id="transcript">
+                    <div id="comprehend-transcript" >Press Start and speak into your mic</div>
+                </div>
             </div>
+            
             
             <div class="col-sm">
                 
@@ -47,14 +49,16 @@
                     Explain
                 </button>
             </div>
-                
-            </div>
+
             
-            <div id="comprehend-transcript"></div>
+            
             <!-- <div id="explain-transcript"></div> -->
               
 
         </div>
+        
+        
+
         <div class="row">
             <!-- <div class="col">
                 <label>Access ID:</label>
@@ -94,6 +98,10 @@
             </div>
         </div>
     </div>
+
+    
+    
+
     <div id="error" class="isa_error"></div>
     
     <!-- <a href="https://github.com/aws-samples/amazon-transcribe-websocket-static" aria-label="View source on GitHub">
