@@ -15,49 +15,33 @@
         <div className="transcribe_body">
             <div className="transcribe_title" id = "transcribe_title"> Real-time Medical Transcription</div>
         </div> 
-
         <div class="row" style="height: 350px;">
-            
-            
             <div class="column">
-                
                    <img src="./microphone.png" style="height: 300px;margin-left: 15em; padding-top: 7em;cursor:pointer" id="start-button" class="button-xl" title="Start Transcription"></img>
             </div>   
             <div class="column" style="width: 20%;">
                 <div class="row" style="writing-mode: vertical-lr;height: 6em;">
-               
                     <button id="stop-button" class="button-xl button-secondary" title="Stop Transcription" disabled="true"><i
-                                    class="fa fa-stop-circle"></i> Stop
+                        class="fa fa-stop-circle"></i> Stop
+                    </button>
+                    <button id="reset-button" class="button-xl button-secondary" title="Clear Transcript"> 
+                        Clear Transcript
                     </button>
 
-                
-                
-                
-                <button id="reset-button" class="button-xl button-secondary" title="Clear Transcript"> 
-                    Clear Transcript
-                </button>
-
-                <button id="comprehend-button" class="button-xl button-secondary" title="Comprehend"> 
-                    Comprehend
-                </button>
-                <button id="explain-button" class="button-xl button-secondary" title="explain"> 
-                    Explain
-                </button>
-            </div>
+                    <button id="comprehend-button" class="button-xl button-secondary" title="Comprehend"> 
+                        Comprehend
+                    </button>
+                    <button id="explain-button" class="button-xl button-secondary" title="explain"> 
+                        Explain
+                    </button>
+                </div>
             </div>
             
-
             <div class="column">
                 <div class="term_explanation" id="term_explanation">
                     <h3 id="placeholder" style="opacity: 30%;"> Term Explanation  </h3>
                 </div>
-                
             </div>
-            
-            
-            <!-- <div id="explain-transcript"></div> -->
-              
-
         </div>
         
 
@@ -99,10 +83,11 @@
                 </select>
             </div>
         </div>
+        
     </div>
 
     
-    <div id="transcript">
+    <div id="transcript" style="opacity: 80%;padding: 3px 3px;">
         <div id="comprehend-transcript" style="opacity: 30%;padding: 3px 3px;">Press Start and speak into your mic</div>
     </div>
     

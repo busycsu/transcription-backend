@@ -26,15 +26,16 @@
   "dependencies": {
     "@aws-sdk/eventstream-marshaller": "0.1.0-preview.2",
     "@aws-sdk/util-utf8-node": "0.1.0-preview.1",
-    "aws-sdk": "^2.796.0",
-    "browserify": "^16.5.1",
+    "aws-sdk": "^2.804.0",
+    "browserify": "^16.5.2",
+    "dom-parser": "^0.1.6",
     "local-web-server": "^3.0.7",
-    "microphone-stream": "^5.0.1",
-    "query-string": "^6.12.1"
+    "microphone-stream": "^5.1.0",
+    "query-string": "^6.13.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
     "babelify": "^10.0.0"
   }
 }
